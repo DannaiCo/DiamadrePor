@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Día de la Madre - iCo Medios</title>
+  <meta http-equiv="refresh" content="180">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color:#f9c4c4;
+      overflow: hidden;
+    }
+
+    .contenedor {
+      width: 100vw;
+      height: 100vh;
+      background: url('fondo.png') no-repeat center center;
+      background-size:100% 100%;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .mensaje {
+      position: absolute;
+      font-weight: lighter;
+      color: #a00830;
+      transformar: traducir (-50%,-50%);
+      font-size: 7.8em;
+      font-family: Open Sans, sans-serif;
+	  font-style: italic;
+    }
+
+    .de {
+      left: 46%;
+      bottom: 21%;
+    }
+
+    .para {
+      left: 46%;
+      bottom: 31%;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <div id="nombres">
+      <div class="mensaje de"></div>
+      <div class="mensaje para"></div>
+    </div>
+  </div>
+
+  <script>
+    const url = "https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLiEuiuWRR49SnJVqsIwnVC3kpnn_F1Yks2XzBx3RMjH_pL736k_cogaCFxxYmcnLmuJmKxMFUwk7wnvWFibSBWYFZesrvx2ZVj9kNunH5-YUJpY69vEg_iMhbr4k0Hnpst_CvQYDl_x0caw1HzC9Zwoo-4v4eGbNKWSPBU_heD4FU626gVBFHl8z-9kKTvhRNfjVUY02db55BqvC3uCBmsyUEAtq6GyAUc9fprqDWxftrRkIpqERRlTQxGrmposMx631j0tUvdDt_S4GFyunwzdgAm1UfH_vqKc1rOy&lib=MNyDfrZzu-N1Aa-jfoeupoFJeGYukJztH";
+
+    fetch(url)
+      .then(res => res.json())
+      .then(aprobados => {
+        if (aprobados.length > 0) {
+          const elegido = aprobados[Math.floor(Math.random() * aprobados.length)];
+          document.querySelector(".de").innerText = elegido.de.toUpperCase();
+          document.querySelector(".para").innerText = elegido.para.toUpperCase();
+        } else {
+          document.querySelector(".de").innerText = "--";
+          document.querySelector(".para").innerText = "--";
+        }
+      });
+  </script>
+</body>
+</html>

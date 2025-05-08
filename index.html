@@ -7,17 +7,23 @@
   <style>
     html, body {
       margin: 0;
-      padding: 0;
+	  width:80vw;
+	  height:80vh;
+	  overflow:hidden;
+	  display:flex;
+	  align-items:center;
+	  justify-content:center;
       background-color:#f9c4c4;
-      overflow: hidden;
     }
 
     .contenedor {
-      width: 100vw;
-      height: 100vh;
+      position:absolute;
+	  top:0;
+	  left:0;
+      width: 2114px;
+      height: 630px;
       background: url('fondo.png') no-repeat center center;
-      background-size:100% 100%;
-      position: relative;
+      background-size:cover;
       margin: 0 auto;
     }
 
@@ -25,20 +31,20 @@
       position: absolute;
       font-weight: lighter;
       color: #a00830;
-      transformar: traducir (-50%,-50%);
-      font-size: 7.8em;
+      transformar: traslate (-50%,-50%);
+      font-size: 3.5em;
       font-family: Open Sans, sans-serif;
 	  font-style: italic;
     }
 
     .de {
       left: 46%;
-      bottom: 21%;
+      bottom: 19.5%;
     }
 
     .para {
       left: 46%;
-      bottom: 31%;
+      bottom: 30%;
     }
   </style>
 </head>
